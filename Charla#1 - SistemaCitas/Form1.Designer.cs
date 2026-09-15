@@ -46,33 +46,37 @@
             // 
             // txtCedula
             // 
-            this.txtCedula.Location = new System.Drawing.Point(125, 37);
+            this.txtCedula.Location = new System.Drawing.Point(167, 46);
+            this.txtCedula.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtCedula.Name = "txtCedula";
-            this.txtCedula.Size = new System.Drawing.Size(188, 20);
+            this.txtCedula.Size = new System.Drawing.Size(249, 22);
             this.txtCedula.TabIndex = 0;
             this.txtCedula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCedula_KeyPress);
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(125, 76);
+            this.txtNombre.Location = new System.Drawing.Point(167, 94);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(188, 20);
+            this.txtNombre.Size = new System.Drawing.Size(249, 22);
             this.txtNombre.TabIndex = 1;
             // 
             // cmbTramite
             // 
             this.cmbTramite.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTramite.FormattingEnabled = true;
-            this.cmbTramite.Location = new System.Drawing.Point(129, 129);
+            this.cmbTramite.Location = new System.Drawing.Point(172, 159);
+            this.cmbTramite.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbTramite.Name = "cmbTramite";
-            this.cmbTramite.Size = new System.Drawing.Size(184, 21);
+            this.cmbTramite.Size = new System.Drawing.Size(244, 24);
             this.cmbTramite.TabIndex = 2;
             // 
             // btnRegistrar
             // 
-            this.btnRegistrar.Location = new System.Drawing.Point(125, 177);
+            this.btnRegistrar.Location = new System.Drawing.Point(167, 218);
+            this.btnRegistrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(121, 23);
+            this.btnRegistrar.Size = new System.Drawing.Size(161, 28);
             this.btnRegistrar.TabIndex = 3;
             this.btnRegistrar.Text = "Registrar Turno";
             this.btnRegistrar.UseVisualStyleBackColor = true;
@@ -80,9 +84,10 @@
             // 
             // btnAtender
             // 
-            this.btnAtender.Location = new System.Drawing.Point(264, 177);
+            this.btnAtender.Location = new System.Drawing.Point(352, 218);
+            this.btnAtender.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAtender.Name = "btnAtender";
-            this.btnAtender.Size = new System.Drawing.Size(75, 23);
+            this.btnAtender.Size = new System.Drawing.Size(100, 28);
             this.btnAtender.TabIndex = 4;
             this.btnAtender.Text = "Llamar siguiente";
             this.btnAtender.UseVisualStyleBackColor = true;
@@ -91,18 +96,21 @@
             // lblTurnoActual
             // 
             this.lblTurnoActual.AutoSize = true;
-            this.lblTurnoActual.Location = new System.Drawing.Point(125, 217);
+            this.lblTurnoActual.Location = new System.Drawing.Point(167, 267);
+            this.lblTurnoActual.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTurnoActual.Name = "lblTurnoActual";
-            this.lblTurnoActual.Size = new System.Drawing.Size(67, 13);
+            this.lblTurnoActual.Size = new System.Drawing.Size(83, 16);
             this.lblTurnoActual.TabIndex = 5;
             this.lblTurnoActual.Text = "Esperando...";
             // 
             // dgvHistorial
             // 
             this.dgvHistorial.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvHistorial.Location = new System.Drawing.Point(125, 245);
+            this.dgvHistorial.Location = new System.Drawing.Point(167, 302);
+            this.dgvHistorial.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvHistorial.Name = "dgvHistorial";
-            this.dgvHistorial.Size = new System.Drawing.Size(663, 179);
+            this.dgvHistorial.RowHeadersWidth = 51;
+            this.dgvHistorial.Size = new System.Drawing.Size(884, 220);
             this.dgvHistorial.TabIndex = 6;
             // 
             // errorProvider1
@@ -112,35 +120,38 @@
             // lblCedula
             // 
             this.lblCedula.AutoSize = true;
-            this.lblCedula.Location = new System.Drawing.Point(39, 40);
+            this.lblCedula.Location = new System.Drawing.Point(52, 49);
+            this.lblCedula.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCedula.Name = "lblCedula";
-            this.lblCedula.Size = new System.Drawing.Size(43, 13);
+            this.lblCedula.Size = new System.Drawing.Size(53, 16);
             this.lblCedula.TabIndex = 7;
             this.lblCedula.Text = "Cedula:";
             // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(39, 79);
+            this.lblNombre.Location = new System.Drawing.Point(52, 97);
+            this.lblNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(47, 13);
+            this.lblNombre.Size = new System.Drawing.Size(59, 16);
             this.lblNombre.TabIndex = 8;
             this.lblNombre.Text = "Nombre:";
             // 
             // lblTramite
             // 
             this.lblTramite.AutoSize = true;
-            this.lblTramite.Location = new System.Drawing.Point(39, 132);
+            this.lblTramite.Location = new System.Drawing.Point(52, 162);
+            this.lblTramite.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTramite.Name = "lblTramite";
-            this.lblTramite.Size = new System.Drawing.Size(81, 13);
+            this.lblTramite.Size = new System.Drawing.Size(103, 16);
             this.lblTramite.TabIndex = 9;
             this.lblTramite.Text = "Tipo de Tramite";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.lblTramite);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.lblCedula);
@@ -151,8 +162,9 @@
             this.Controls.Add(this.cmbTramite);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.txtCedula);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Sistema de Citas";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistorial)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();

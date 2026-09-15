@@ -13,17 +13,16 @@ namespace Charla_1___SistemaCitas
 {
     public partial class Form1 : Form
     {
-        // ESCENARIO 1 y TEMA CENTRAL: Uso de Colecciones Genéricas
-
-        // 1. List: Ideal para almacenar el historial completo dinámicamente
+        //ESCENARIO#1: Uso de Colecciones Genéricas
+        // 1. List
         private List<Ciudadano> listaHistorial = new List<Ciudadano>();
 
-        // 2. Queue (Cola): Ideal para turnos, sigue el principio FIFO (First In, First Out)
+        // 2. Queue (Cola)
         private Queue<Ciudadano> filaTurnos = new Queue<Ciudadano>();
 
-        // 3. Dictionary: Ideal para mapear claves únicas con valores sin usar múltiples 'IF'
+        // 3. Dictionary
         private Dictionary<string, decimal> catalogoTramites = new Dictionary<string, decimal>();
-        
+
         public Form1()
         {
             InitializeComponent();
@@ -34,7 +33,7 @@ namespace Charla_1___SistemaCitas
         {
             // Llenamos el diccionario con los trámites y sus costos
             catalogoTramites.Add("Renovación de Cédula", 15.00m);
-            catalogoTramites.Add("Inscripción de Nacimiento", 0.00m);
+            catalogoTramites.Add("Inscripción de Nacimiento", 1.00m);
             catalogoTramites.Add("Certificado de Matrimonio", 5.50m);
 
             // Pasamos las llaves del diccionario al ComboBox
@@ -49,10 +48,10 @@ namespace Charla_1___SistemaCitas
 
         }
 
-        // ESCENARIO 2: Evento KeyPress
+        // ESCENARIO#2: Evento KeyPress
         private void txtCedula_KeyPress(object sender, KeyPressEventArgs e)
         {
-            // Llama a la clase estática (Mantenibilidad - ISO 25010)
+            // Llamamos a la clase estática
             UtilidadesValidacion.PermitirSoloFormatoCedula(e);
         }
 
@@ -61,10 +60,10 @@ namespace Charla_1___SistemaCitas
             // Limpiamos errores previos
             errorProvider1.Clear();
 
-            // ESCENARIO 2: Try-Catch y ErrorProvider (Robustez)
+            // ESCENARIO#2: Try-Catch y ErrorProvider
             try
             {
-                // 1. Validaciones Defensivas
+                // 1. Validaciones
                 if (!UtilidadesValidacion.EsCampoValido(txtCedula.Text))
                 {
                     errorProvider1.SetError(txtCedula, "La cédula es obligatoria");
@@ -100,7 +99,7 @@ namespace Charla_1___SistemaCitas
             }
             catch (Exception ex)
             {
-                // Si algo catastrófico falla, el programa no se cierra
+                // Si algo falla, el programa no se cierra
                 MessageBox.Show($"Ocurrió un error inesperado: {ex.Message}", "Error Crítico", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -109,9 +108,21 @@ namespace Charla_1___SistemaCitas
         {
             if (filaTurnos.Count > 0)
             {
-                // Dequeue saca al primero que llegó (FIFO)
+                //Dequeue saca a la persona de la fila o cola
                 Ciudadano turnoActual = filaTurnos.Dequeue();
+
                 lblTurnoActual.Text = $"Atendiendo a: {turnoActual.NombreCompleto} - {turnoActual.Tramite}";
+
+                //Buscamos a esa misma persona en la lista
+                //Buscamos coincidencia exacta por cédula y hora
+                var ciudadanoAEliminar = listaHistorial.FirstOrDefault(c => c.Cedula == turnoActual.Cedula && c.HoraLlegada == turnoActual.HoraLlegada);
+
+                //Si lo encontramos, lo borramos de la LISTA y refrescamos el Grid
+                if (ciudadanoAEliminar != null)
+                {
+                    listaHistorial.Remove(ciudadanoAEliminar);
+                    ActualizarTabla();
+                }
             }
             else
             {
@@ -121,7 +132,7 @@ namespace Charla_1___SistemaCitas
         }
         private void ActualizarTabla()
         {
-            // Truco en WinForms: Desconectar y volver a conectar para refrescar el DataGridView
+            //Desconectar y volver a conectar para refrescar el DataGridView
             dgvHistorial.DataSource = null;
             dgvHistorial.DataSource = listaHistorial;
         }
