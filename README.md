@@ -27,8 +27,6 @@ Charla#1 - SistemaCitas/ \
 └── README.md                  # Documentación del proyecto
 
 ## Autores y contexto
-- Nombres: Neo Ají\
-           Gabriel Jiménez\
-           Justin Okada
+- Nombres: Neo Ají, Gabriel Jiménez y Justin Okada
 - Institución: Universidad Tecnológica de Panamá (UTP)
 - Fecha de Realización: 14/09/2026
